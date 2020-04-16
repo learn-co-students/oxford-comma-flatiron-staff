@@ -1,15 +1,8 @@
 def oxford_comma(array)
-  if array.length == 1
-    array.join
-  elsif array.length == 2
-    last_word = array.pop
-    array << "and"
-    array << last_word
-    array.join(" ")
-  else
-    last_word = array.pop
-    array << "and"
-    oxford_string = array.join(", ")
-    oxford_string << " #{last_word}"
+  if array.length == 2
+    return "#{array[0]} and #{array[1]}"
+  elsif 2 < array.length
+    array[-1].insert(0, "and ")
   end
+  array.join(", ")
 end
